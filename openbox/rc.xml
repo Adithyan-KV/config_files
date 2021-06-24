@@ -313,12 +313,9 @@
         <direction>down</direction>
       </action>
     </keybind>
-
     <!-- ############################################################################################################## -->
     <!-- =============================================Custom keybindings=============================================== -->
     <!-- ############################################################################################################## -->
-
-
     <!-- ==============LAUNCHING PROGRAMS============== -->
     <!-- ############################################## -->
     <!-- Run launcher : Super+Space-->
@@ -345,8 +342,6 @@
         <command>thunar</command>
       </action>
     </keybind>
-
-
     <!-- =============TILING AND MANAGING WINDOWS============== -->
     <!-- ###################################################### -->
     <!-- Tile to left half: Super+LeftArrow -->
@@ -377,13 +372,10 @@
     <keybind key="W-KP_Insert">
       <action name="MaximizeFull"/>
     </keybind>
-        
-
     <!-- Close active window : Super+w -->
     <keybind key="W-w">
       <action name="Close"/>
     </keybind>
-
     <!-- Lock screen: Super+l -->
     <keybind key="W-l">
       <action name="Execute">
@@ -391,9 +383,6 @@
       </action>
     </keybind>
   </keyboard>
-
-
-
   <mouse>
     <dragThreshold>1</dragThreshold>
     <!-- number of pixels the mouse must move before a drag begins -->

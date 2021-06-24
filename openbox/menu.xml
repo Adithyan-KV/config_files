@@ -76,6 +76,25 @@
         </item>
     </menu>
 
+
+    <!-- Sub menu for file manager-->
+    <menu id="file managers" label="File managers" icon="ICON">
+        <item label="Thunar" icon="ICON">
+            <action name="Execute">
+                <command>
+                    thunar
+                </command>
+            </action>
+        </item>
+        <item label="Thunar (Root)" icon="ICON">
+            <action name="Execute">
+                <command>
+                    pkexec thunar
+                </command>
+            </action>
+        </item>
+    </menu>
+
     <!-- Sub menu for graphics programs -->
     <menu id="editors" label="Text editors" icon="ICON">
         <item label="Leafpad" icon="ICON">
@@ -112,8 +131,22 @@
         </item>
     </menu>
 
-    <!-- Menu for system related stuff -->
+    <!-- section for system related stuff -->
     <separator label="System"/>
+    <item label="Add or remove programs" icon="ICON">
+        <action name="Execute">
+            <command>
+                pamac-manager
+            </command>
+        </action>
+    </item>
+    <item label="Manage displays" icon="ICON">
+        <action name="Execute">
+            <command>
+                arandr
+            </command>
+        </action>
+    </item>
     <!-- Themes, Wallpapers -->
     <menu id="appearance" label="Appearance" icon="ICON">
         <item label="Wallpaper" icon="ICON">
@@ -127,6 +160,13 @@
             <action name="Execute">
                 <command>
                     lxappearance
+                </command>
+            </action>
+        </item>
+        <item label="Openbox Theme" icon="ICON">
+            <action name="Execute">
+                <command>
+                    obconf
                 </command>
             </action>
         </item>
@@ -154,14 +194,15 @@
                 </command>
             </action>
         </item>
+        <item label="Log out" icon="ICON">
+            <action name="Execute">
+                <command>
+                    logout
+                </command>
+            </action>
+        </item>
     </menu>
-    <item label="Add or remove programs" icon="ICON">
-        <action name="Execute">
-            <command>
-                pamac-manager
-            </command>
-        </action>
-    </item>
+
 
 </menu>
 </openbox_menu>
