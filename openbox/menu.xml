@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/ file:///usr/share/openbox/menu.xsd">
+
+<!-- Full menu. Needs id root-menu -->
+<menu id="root-menu" label="Openbox3" icon="ICON">
+
+    <!-- Section for openbox related stuff -->
+    <item label="Reconfigure openbox" icon="ICON">
+        <action name="Execute">
+            <command>
+                openbox --reconfigure
+            </command>
+        </action>
+    </item>
+
+    <!-- Section for installed apps -->
+    <separator label="Apps"/>
+    <!-- Sub menu for graphics programs -->
+    <menu id="graphics" label="Graphics" icon="ICON">
+        <item label="Gimp" icon="ICON">
+            <action name="Execute">
+                <command>
+                    gimp
+                </command>
+            </action>
+        </item>
+        <item label="Inkscape" icon="ICON">
+            <action name="Execute">
+                <command>
+                    inkscape
+                </command>
+            </action>
+        </item>
+        <item label="Blender" icon="ICON">
+            <action name="Execute">
+                <command>
+                    blender
+                </command>
+            </action>
+        </item>
+    </menu>
+
+    <!-- Sub menu for terminal emulators-->
+    <menu id="terminals" label="Terminals" icon="ICON">
+        <item label="Alacritty" icon="ICON">
+            <action name="Execute">
+                <command>
+                    alacritty
+                </command>
+            </action>
+        </item>
+        <item label="Xterm" icon="ICON">
+            <action name="Execute">
+                <command>
+                    xterm
+                </command>
+            </action>
+        </item>
+    </menu>
+
+    <!-- Sub menu for media programs-->
+    <menu id="media" label="Media" icon="ICON">
+        <item label="Spotify" icon="ICON">
+            <action name="Execute">
+                <command>
+                    spotify
+                </command>
+            </action>
+        </item>
+        <item label="VLC player" icon="ICON">
+            <action name="Execute">
+                <command>
+                    vlc
+                </command>
+            </action>
+        </item>
+    </menu>
+
+    <!-- Sub menu for graphics programs -->
+    <menu id="editors" label="Text editors" icon="ICON">
+        <item label="Leafpad" icon="ICON">
+            <action name="Execute">
+                <command>
+                    leafpad
+                </command>
+            </action>
+        </item>
+        <item label="VS Code" icon="ICON">
+            <action name="Execute">
+                <command>
+                    code
+                </command>
+            </action>
+        </item>
+        <item label="Nano" icon="ICON">
+            <action name="Execute">
+                <command>
+                    alacritty -e nano
+                </command>
+            </action>
+        </item>
+    </menu>
+
+    <!-- Sub menu for web programs -->
+    <menu id="web" label="Web" icon="ICON">
+        <item label="Firefox" icon="ICON">
+            <action name="Execute">
+                <command>
+                    firefox
+                </command>
+            </action>
+        </item>
+    </menu>
+
+    <!-- Menu for system related stuff -->
+    <separator label="System"/>
+    <!-- Themes, Wallpapers -->
+    <menu id="appearance" label="Appearance" icon="ICON">
+        <item label="Wallpaper" icon="ICON">
+            <action name="Execute">
+                <command>
+                    nitrogen
+                </command>
+            </action>
+        </item>
+        <item label="GTK Theme" icon="ICON">
+            <action name="Execute">
+                <command>
+                    lxappearance
+                </command>
+            </action>
+        </item>
+        <item label="Lock screen greeter" icon="ICON">
+            <action name="Execute">
+                <command>
+                    pkexec lightdm-gtk-greeter-settings
+                </command>
+            </action>
+        </item>
+    </menu>
+    <!-- Shutdown restart etc. -->
+    <menu id="power" label="Power" icon="ICON">
+        <item label="Shut down" icon="ICON">
+            <action name="Execute">
+                <command>
+                    shutdown -h now
+                </command>
+            </action>
+        </item>
+        <item label="Restart" icon="ICON">
+            <action name="Execute">
+                <command>
+                    reboot
+                </command>
+            </action>
+        </item>
+    </menu>
+    <item label="Add or remove programs" icon="ICON">
+        <action name="Execute">
+            <command>
+                pamac-manager
+            </command>
+        </action>
+    </item>
+
+</menu>
+</openbox_menu>
