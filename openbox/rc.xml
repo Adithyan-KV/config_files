@@ -383,6 +383,13 @@
     <keybind key="W-w">
       <action name="Close"/>
     </keybind>
+
+    <!-- Lock screen: Super+l -->
+    <keybind key="W-l">
+      <action name="Execute">
+        <command>dm-tool lock</command>
+      </action>
+    </keybind>
   </keyboard>
 
 
