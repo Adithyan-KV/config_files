@@ -14,3 +14,5 @@ picom&
 # Start authentication daemon. For GUI password confirmations etc.
 lxsession&
 
+# Start program to automount usbs
+udiskie&
