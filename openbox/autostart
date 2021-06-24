@@ -1,0 +1,16 @@
+# start system tray applets
+(sleep 5; nm-applet)&
+(sleep 2; pa-applet)&
+
+# Launch the panel
+tint2&
+
+# Restore the last wallpaper that was set
+nitrogen --restore&
+
+# Start the compositor
+picom&
+
+# Start authentication daemon. For GUI password confirmations etc.
+lxsession&
+
