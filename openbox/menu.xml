@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/ file:///usr/share/openbox/menu.xsd">
 
+<!-- Path to icons "/home/adithyankv/.icons/Papirus-Dark/16x16/" search and replace to change icon theme -->
+
 <!-- Full menu. Needs id root-menu -->
 <menu id="root-menu" label="Openbox3" icon="ICON">
 
     <!-- Section for openbox related stuff -->
-    <item label="Reconfigure openbox" icon="ICON">
+    <item label="Reconfigure openbox" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/actions/reload.svg">
         <action name="Execute">
             <command>
                 openbox --reconfigure
@@ -16,22 +18,22 @@
     <!-- Section for installed apps -->
     <separator label="Apps"/>
     <!-- Sub menu for graphics programs -->
-    <menu id="graphics" label="Graphics" icon="ICON">
-        <item label="Gimp" icon="ICON">
+    <menu id="graphics" label="Graphics" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/package_graphics.svg">
+        <item label="Gimp" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/gimp.svg">
             <action name="Execute">
                 <command>
                     gimp
                 </command>
             </action>
         </item>
-        <item label="Inkscape" icon="ICON">
+        <item label="Inkscape" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/inkscape.svg">
             <action name="Execute">
                 <command>
                     inkscape
                 </command>
             </action>
         </item>
-        <item label="Blender" icon="ICON">
+        <item label="Blender" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/blender.svg">
             <action name="Execute">
                 <command>
                     blender
@@ -41,15 +43,15 @@
     </menu>
 
     <!-- Sub menu for terminal emulators-->
-    <menu id="terminals" label="Terminals" icon="ICON">
-        <item label="Alacritty" icon="ICON">
+    <menu id="terminals" label="Terminals" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/terminal.svg">
+        <item label="Alacritty" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/com.alacritty.Alacritty.svg">
             <action name="Execute">
                 <command>
                     alacritty
                 </command>
             </action>
         </item>
-        <item label="Xterm" icon="ICON">
+        <item label="Xterm" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/xterm.svg">
             <action name="Execute">
                 <command>
                     xterm
@@ -59,15 +61,15 @@
     </menu>
 
     <!-- Sub menu for media programs-->
-    <menu id="media" label="Media" icon="ICON">
-        <item label="Spotify" icon="ICON">
+    <menu id="media" label="Media" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/multimedia.svg">
+        <item label="Spotify" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/spotify.svg">
             <action name="Execute">
                 <command>
                     spotify
                 </command>
             </action>
         </item>
-        <item label="VLC player" icon="ICON">
+        <item label="VLC player" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/vlc.svg">
             <action name="Execute">
                 <command>
                     vlc
@@ -78,15 +80,15 @@
 
 
     <!-- Sub menu for file manager-->
-    <menu id="file managers" label="File managers" icon="ICON">
-        <item label="Thunar" icon="ICON">
+    <menu id="file managers" label="File managers" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/xfce-filemanager.svg">
+        <item label="Thunar" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/thunar.svg">
             <action name="Execute">
                 <command>
                     thunar
                 </command>
             </action>
         </item>
-        <item label="Thunar (Root)" icon="ICON">
+        <item label="Thunar (Root)" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/thunar.svg">
             <action name="Execute">
                 <command>
                     pkexec thunar
@@ -96,22 +98,22 @@
     </menu>
 
     <!-- Sub menu for graphics programs -->
-    <menu id="editors" label="Text editors" icon="ICON">
-        <item label="Leafpad" icon="ICON">
+    <menu id="editors" label="Text editors" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/text-editor.svg">
+        <item label="Leafpad" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/leafpad.svg">
             <action name="Execute">
                 <command>
                     leafpad
                 </command>
             </action>
         </item>
-        <item label="VS Code" icon="ICON">
+        <item label="VS Code" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/code.svg">
             <action name="Execute">
                 <command>
                     code
                 </command>
             </action>
         </item>
-        <item label="Nano" icon="ICON">
+        <item label="Nano" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/terminal.svg">
             <action name="Execute">
                 <command>
                     alacritty -e nano
@@ -121,8 +123,8 @@
     </menu>
 
     <!-- Sub menu for web programs -->
-    <menu id="web" label="Web" icon="ICON">
-        <item label="Firefox" icon="ICON">
+    <menu id="web" label="Web" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/internet-web-browser.svg">
+        <item label="Firefox" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/firefox.svg">
             <action name="Execute">
                 <command>
                     firefox
@@ -133,14 +135,14 @@
 
     <!-- section for system related stuff -->
     <separator label="System"/>
-    <item label="Add or remove programs" icon="ICON">
+    <item label="Add or remove programs" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/package-manager-icon.svg">
         <action name="Execute">
             <command>
                 pamac-manager
             </command>
         </action>
     </item>
-    <item label="Manage displays" icon="ICON">
+    <item label="Manage displays" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/cs-display.svg">
         <action name="Execute">
             <command>
                 arandr
@@ -148,29 +150,29 @@
         </action>
     </item>
     <!-- Themes, Wallpapers -->
-    <menu id="appearance" label="Appearance" icon="ICON">
-        <item label="Wallpaper" icon="ICON">
+    <menu id="appearance" label="Appearance" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/screensaver.svg">
+        <item label="Wallpaper" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/preferences-wallpaper.svg">
             <action name="Execute">
                 <command>
                     nitrogen
                 </command>
             </action>
         </item>
-        <item label="GTK Theme" icon="ICON">
+        <item label="GTK Theme" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/gtk3-demo.svg">
             <action name="Execute">
                 <command>
                     lxappearance
                 </command>
             </action>
         </item>
-        <item label="Openbox Theme" icon="ICON">
+        <item label="Openbox Theme" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/preferences-desktop-theme-windowdecorations.svg">
             <action name="Execute">
                 <command>
                     obconf
                 </command>
             </action>
         </item>
-        <item label="Lock screen greeter" icon="ICON">
+        <item label="Lock screen greeter" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/xfce-system-lock.svg">
             <action name="Execute">
                 <command>
                     pkexec lightdm-gtk-greeter-settings
@@ -179,22 +181,22 @@
         </item>
     </menu>
     <!-- Shutdown restart etc. -->
-    <menu id="power" label="Power" icon="ICON">
-        <item label="Shut down" icon="ICON">
+    <menu id="power" label="Power" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/cs-power.svg">
+        <item label="Shut down" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/system-shutdown.svg">
             <action name="Execute">
                 <command>
                     shutdown -h now
                 </command>
             </action>
         </item>
-        <item label="Restart" icon="ICON">
+        <item label="Restart" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/system-reboot.svg">
             <action name="Execute">
                 <command>
                     reboot
                 </command>
             </action>
         </item>
-        <item label="Log out" icon="ICON">
+        <item label="Log out" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/gnome-logout.svg">
             <action name="Execute">
                 <command>
                     logout
