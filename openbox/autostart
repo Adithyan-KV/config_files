@@ -5,7 +5,10 @@
 (sleep 2; cbatticon)&
 
 # start battery notification daemon
-batsignal -b 
+batsignal -b&
+
+# start clipboard manager
+clipit&
 
 # Launch the panel and dock
 tint2&
