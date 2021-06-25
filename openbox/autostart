@@ -2,6 +2,10 @@
 (sleep 5; nm-applet)&
 (sleep 2; pa-applet)&
 (sleep 2; mictray)&
+(sleep 2; cbatticon)&
+
+# start battery notification daemon
+batsignal -b 
 
 # Launch the panel and dock
 tint2&
@@ -12,6 +16,9 @@ nitrogen --restore&
 
 # Start the compositor
 picom&
+
+# Start notification daemon
+/usr/lib/xfce4/notifyd/xfce4-notifyd&
 
 # Start authentication daemon. For GUI password confirmations etc.
 lxsession&
