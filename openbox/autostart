@@ -2,8 +2,9 @@
 (sleep 5; nm-applet)&
 (sleep 2; pa-applet)&
 
-# Launch the panel
+# Launch the panel and dock
 tint2&
+plank&
 
 # Restore the last wallpaper that was set
 nitrogen --restore&
