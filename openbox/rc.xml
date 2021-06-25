@@ -342,6 +342,26 @@
         <command>thunar</command>
       </action>
     </keybind>
+    <!-- Run xkill Super+x -->
+    <keybind key="W-x">
+      <action name="Execute">
+        <command>xkill</command>
+      </action>
+    </keybind>
+    <!-- =============TAKING SCREENSHOTS============== -->
+    <!-- ############################################# -->
+    <!-- Take fullscreen screenshots -->
+    <keybind key="Print">
+      <action name="Execute">
+        <command>xfce4-screenshooter -f</command>
+      </action>
+    </keybind>
+    <!-- Take screenshot of region -->
+    <keybind key="S-Print">
+      <action name="Execute">
+        <command>xfce4-screenshooter -r</command>
+      </action>
+    </keybind>
     <!-- =============TILING AND MANAGING WINDOWS============== -->
     <!-- ###################################################### -->
     <!-- Tile to left half: Super+LeftArrow -->
