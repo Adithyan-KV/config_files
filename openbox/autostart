@@ -1,6 +1,7 @@
 # start system tray applets
 (sleep 5; nm-applet)&
 (sleep 2; pa-applet)&
+(sleep 2; mictray)&
 
 # Launch the panel and dock
 tint2&
@@ -13,7 +14,7 @@ nitrogen --restore&
 picom&
 
 # Start authentication daemon. For GUI password confirmations etc.
-lxsession-gtk3&
+lxsession&
 
 # Start program to automount usbs
 udiskie&
