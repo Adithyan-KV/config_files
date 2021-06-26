@@ -1,0 +1,5 @@
+#ignore python bytecode files
+*.pyc
+
+#ignore virtual env
+conf
