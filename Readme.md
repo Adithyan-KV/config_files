@@ -1,4 +1,4 @@
-# Openbox config files
+# Openbox/Arch config files
 My config files for an arch linux installation using openbox WM. Mostly meant as a guide to myself so that I can later rebuild the same config if necessary. Includes a list of all the main programs used to set up the build.
 
 ## Demo
