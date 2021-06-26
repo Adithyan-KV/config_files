@@ -22,3 +22,6 @@ Applet that comes with _clipit_ clipboard manager
 ### Battery status applet
 _cbatticon_ applet for showing battery status
 
+### Optimus manager output
+_optimus-manager-qt_ applet for managing the two GPUs in the laptop
+

@@ -8,9 +8,17 @@ Image of build in progress. Might update with more images later as I make more p
 ## Programs
 
 ### Display server
-Uses X11 as the display server. Install _xorg_ and appropriate video driver.
+Uses X11 as the display server. Install _xorg_ and appropriate video driver. 
 ```
-sudo pacman -S xorg xorg-xinit nvidia nvidia-utils
+sudo pacman -S xorg xorg-xinit nvidia nvidia-utils xf86-video-intel vulkan-intel
+```
+For using _nvidia optimus_ to manage both the intel and nvidia cards present on the machine install the necessary nvidia packages as well
+```
+sudo pacman -S nvidia-prime nvidia-settings 
+```
+for better hybrid switching install _optimus-manager_
+```
+yay -S optimus-manager optimus-manager-qt
 ```
 
 ### Desktop Environment/Window manager
