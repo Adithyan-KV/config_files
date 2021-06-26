@@ -8,7 +8,7 @@
 batsignal -b&
 
 # start clipboard manager
-clipit&
+#clipit&
 
 # Launch the panel and dock
 tint2&
@@ -28,3 +28,6 @@ lxsession&
 
 # Start program to automount usbs
 udiskie&
+
+# If external display is connected disable inbuilt display and use that
+~/Files/config_files/custom_scripts/second_monitor_only.sh&
