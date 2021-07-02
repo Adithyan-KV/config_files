@@ -321,7 +321,7 @@
     <!-- Run launcher : Super+Space-->
     <keybind key="W-space">
       <action name="Execute">
-        <command>rofi -modi drun -show drun</command>
+        <command>rofi -show drun</command>
       </action>
     </keybind>
     <!-- Open terminal : Super+T -->
