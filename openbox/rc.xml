@@ -333,7 +333,8 @@
     <!-- Open web browser : Super+b -->
     <keybind key="W-b">
       <action name="Execute">
-        <command>firefox</command>
+      <!-- Tried using an alias for the bash script but doesn't seem to work -->
+        <command>~/Files/config_files/custom_scripts/open_or_get_focus.sh firefox</command>
       </action>
     </keybind>
     <!-- Open file browser : Super+f -->

@@ -5,3 +5,6 @@ Turns off the inbuilt laptop display and uses only the external display which is
 
 - [ ] May be make a panel applet to make switching easier
 
+## Open or get focus
+If the program passed as argument already has an open window, makes that the active window and raises it up. Otherwise opens a new instance and raises that up. Not a foolproof 
+script but works pretty well for my case.
