@@ -35,3 +35,6 @@ udiskie&
 # Remap the caps lock key to function as escape
 setxkbmap -option caps:escape
 
+# Set the keyboard repeat rate faster. Holding down a key logs the keypresses faster. Useful for keyboard navigation in vim etc.
+xset r rate 200 30
+
