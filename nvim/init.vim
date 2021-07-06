@@ -1,3 +1,4 @@
+" Enable syntax highlighting
 syntax on
 
 " Tabs
@@ -33,10 +34,15 @@ set smartindent
 " Make vim use system clipboard, Requires xclip
 set clipboard+=unnamedplus
 
+" Setting space as leader key
+let mapleader=" "
+set ttimeoutlen=500
+
 " Call all the plugins
 call plug#begin('~/.vim/plugged')
 
     Plug 'morhetz/gruvbox'  
+    Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
@@ -45,10 +51,15 @@ let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 set background=dark
 
+" Setting colorscheme of statusline
+let g:lightline={'colorscheme':'wombat',}
+
+" Disabling the modename at the bottom as statusline extension already shows it
+set noshowmode
+
 " Draw ruler
 set colorcolumn=80
 highlight ColorColumn ctermbg=234 guibg=lightgray
 
 " Enable mouse in all modes
 set mouse=a
-
