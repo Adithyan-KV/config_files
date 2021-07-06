@@ -43,7 +43,9 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'morhetz/gruvbox'  
     Plug 'itchyny/lightline.vim'
-
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'preservim/nerdtree'
+    
 call plug#end()
 
 " Setting color scheme
@@ -77,7 +79,14 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-c> <C-w>q 
 
-" Opening terminal in vertical split, leader-T to toggle terminal
-autocmd TermOpen * startinsert
-nnoremap <C-t> :10sp \| bel terminal<CR>
-tnoremap <C-t> <C-\><C-n>:q<CR> 
+" Opening terminal in vertical split, Shift+t to toggle terminal
+autocmd TermOpen * startinsert              " Always open terminal in insert mode
+" Open terminal in bottom split
+nnoremap <S-t> :10sp \| bel terminal<CR>
+" Close terminal if already open
+tnoremap <S-t> <C-\><C-n>:q<CR>              
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" File browser plugin
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>n :NERDTreeToggle<CR>
