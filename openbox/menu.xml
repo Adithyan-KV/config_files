@@ -69,10 +69,19 @@
                 </command>
             </action>
         </item>
+        <separator/>
         <item label="VLC player" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/vlc.svg">
             <action name="Execute">
                 <command>
                     vlc
+                </command>
+            </action>
+        </item>
+        <separator/>
+        <item label="Rhythmbox" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/rhythmbox.svg">
+            <action name="Execute">
+                <command>
+                    rhythmbox
                 </command>
             </action>
         </item>
