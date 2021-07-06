@@ -63,3 +63,22 @@ highlight ColorColumn ctermbg=234 guibg=lightgray
 
 " Enable mouse in all modes
 set mouse=a
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Managing split windows
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Making new split windows open to thr right and down
+set splitbelow splitright
+
+" Remapping split navigation to just Ctrl+hjkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-c> <C-w>q 
+
+" Opening terminal in vertical split, leader-T to toggle terminal
+autocmd TermOpen * startinsert
+tnoremap <Esc> <C-\><C-n>
+nnoremap <C-t> :10sp \| bel terminal<CR>
+tnoremap <C-t> <C-\><C-n>:q<CR> 
