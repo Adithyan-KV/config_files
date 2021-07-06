@@ -10,6 +10,8 @@ window:
     x: 2
     y: 5
   startup_mode: Windowed
+  dynamic_title: true
+
 
 scrolling:
   history: 10000
@@ -131,7 +133,7 @@ colors:
   #title: Alacritty
 
   # Allow terminal applications to change Alacritty's window title.
-  #dynamic_title: true
+  # dynamic_title: true
 
   # Window class (Linux/BSD only):
   #class:
