@@ -79,6 +79,5 @@ nnoremap <C-c> <C-w>q
 
 " Opening terminal in vertical split, leader-T to toggle terminal
 autocmd TermOpen * startinsert
-tnoremap <Esc> <C-\><C-n>
 nnoremap <C-t> :10sp \| bel terminal<CR>
 tnoremap <C-t> <C-\><C-n>:q<CR> 
