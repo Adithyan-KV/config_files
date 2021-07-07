@@ -1,12 +1,6 @@
 " Enable syntax highlighting
 syntax on
 
-" Tabs
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-
 " Line numbering
 set number
 
@@ -28,9 +22,6 @@ set noswapfile
 " Highlight searches
 set incsearch
 
-" Autoindent
-set smartindent
-
 " Make vim use system clipboard, Requires xclip
 set clipboard+=unnamedplus
 
@@ -41,11 +32,18 @@ set ttimeoutlen=500
 " Call all the plugins
 call plug#begin('~/.vim/plugged')
 
-    Plug 'morhetz/gruvbox'  
-    Plug 'itchyny/lightline.vim'
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'preservim/nerdtree'
-    
+    Plug 'norcalli/nvim-colorizer.lua'                      " Show colors on color codes
+    Plug 'mhinz/vim-startify'                               " Startup screen for vim
+    Plug 'morhetz/gruvbox'                                  " Gruvbox color scheme
+    Plug 'itchyny/lightline.vim'                            " Status line plugin
+    Plug 'ryanoasis/vim-devicons'                           " Icons for filetypes in NERDTree
+    Plug 'preservim/nerdtree'                               " File browser bar
+    Plug 'yggdroot/indentline'                              " Show indentation levels
+    Plug 'raimondi/delimitmate'                             " Autoclose brackets,quotes etc.
+    Plug 'bronson/vim-trailing-whitespace'                  " Highlight and delete trailing whitespace
+    Plug 'preservim/nerdcommenter'                          " Adds better commenting
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}         " Autocompletion for code
+
 call plug#end()
 
 " Setting color scheme
@@ -59,9 +57,17 @@ let g:lightline={'colorscheme':'wombat',}
 " Disabling the modename at the bottom as statusline extension already shows it
 set noshowmode
 
+" For color code highlighting plugin
+set termguicolors
+lua require'colorizer'.setup()
+
 " Draw ruler
 set colorcolumn=80
-highlight ColorColumn ctermbg=234 guibg=lightgray
+highlight ColorColumn ctermbg=234 guibg=#1c1c1c
+
+" Highlighting the line on which the cursor is on
+set cursorline
+highlight Cursorline ctermbg=235 guibg=#262626
 
 " Enable mouse in all modes
 set mouse=a
@@ -77,16 +83,43 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-nnoremap <C-c> <C-w>q 
+nnoremap <C-c> <C-w>q
 
 " Opening terminal in vertical split, Shift+t to toggle terminal
 autocmd TermOpen * startinsert              " Always open terminal in insert mode
 " Open terminal in bottom split
 nnoremap <S-t> :10sp \| bel terminal<CR>
 " Close terminal if already open
-tnoremap <S-t> <C-\><C-n>:q<CR>              
+tnoremap <S-t> <C-\><C-n>:q<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " File browser plugin
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>n :NERDTreeToggle<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Managing indents and tabs
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Autoindent
+set smartindent
+set autoindent
+
+" Tabs
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+" display indentation levels with lines plugin. Setting colors
+let g:indentLine_color_term=235
+let g:indentLine_color_gui='#262626'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Setting other custom keybindings
+" (Mostly to VSCode bindings)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" save with Ctrl+s
+" Automatically deletes trailing whitespace while saving
+nmap <C-s> :FixWhitespace<CR> :w<CR>
+imap <C-s> <Esc>:FixWhitespace<CR> :w<CR>
+
