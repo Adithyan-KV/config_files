@@ -10,6 +10,9 @@ set showcmd
 " Matching brackets automatically
 set showmatch
 
+" Keep a few lines between cursor and top and bottom of screen during scroll
+set scrolloff=15
+
 " Donot wrap text
 set nowrap
 
@@ -34,7 +37,6 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'norcalli/nvim-colorizer.lua'                      " Show colors on color codes
     Plug 'mhinz/vim-startify'                               " Startup screen for vim
-    Plug 'morhetz/gruvbox'                                  " Gruvbox color scheme
     Plug 'itchyny/lightline.vim'                            " Status line plugin
     Plug 'ryanoasis/vim-devicons'                           " Icons for filetypes in NERDTree
     Plug 'preservim/nerdtree'                               " File browser bar
@@ -43,16 +45,17 @@ call plug#begin('~/.vim/plugged')
     Plug 'bronson/vim-trailing-whitespace'                  " Highlight and delete trailing whitespace
     Plug 'preservim/nerdcommenter'                          " Adds better commenting
     Plug 'neoclide/coc.nvim', {'branch': 'release'}         " Autocompletion for code
+    Plug 'adithyan-kv/gruvbox-darkest'                      " Custom gruvbox colorscheme
+    Plug 'tpope/vim-fugitive'                               " Git integration
 
 call plug#end()
 
 " Setting color scheme
 let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
+colorscheme gruvbox-darkest
 set background=dark
 
-" Setting colorscheme of statusline
-let g:lightline={'colorscheme':'wombat',}
+
 
 " Disabling the modename at the bottom as statusline extension already shows it
 set noshowmode
@@ -115,6 +118,21 @@ let g:indentLine_color_term=235
 let g:indentLine_color_gui='#262626'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Managing the statusline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" setting colorscheme and adding git branch name
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Setting other custom keybindings
 " (Mostly to VSCode bindings)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -123,3 +141,6 @@ let g:indentLine_color_gui='#262626'
 nmap <C-s> :FixWhitespace<CR> :w<CR>
 imap <C-s> <Esc>:FixWhitespace<CR> :w<CR>
 
+" Comment line with Ctrl+/.For some reason _ represents /.
+filetype plugin on                      " Needed for nerdcommenter
+nmap <C-_> <Plug>NERDCommenterToggle
