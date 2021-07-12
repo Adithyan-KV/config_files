@@ -55,10 +55,9 @@ let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox-darkest
 set background=dark
 
-
-
-" Disabling the modename at the bottom as statusline extension already shows it
-set noshowmode
+" Disable quote concealing in JSON files. To compensate for a setting that
+" Indentline plugin changes
+let g:vim_json_conceal=0
 
 " For color code highlighting plugin
 set termguicolors
@@ -99,9 +98,10 @@ tnoremap <S-t> <C-\><C-n>:q<CR>
 " File browser plugin
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>n :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
-" Managing indents and tabs
+" Managing indents
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autoindent
 set smartindent
@@ -132,9 +132,19 @@ let g:lightline = {
       \ },
       \ }
 
+" Disabling the modename at the bottom as statusline extension already shows
+" it
+set noshowmode
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Setting other custom keybindings
-" (Mostly to VSCode bindings)
+" Navigating tabs
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <S-h> gT
+nnoremap <S-l> gt
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  Setting other custom keybindings
+"  (Mostly to VSCode bindings)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " save with Ctrl+s
 " Automatically deletes trailing whitespace while saving
@@ -144,3 +154,20 @@ imap <C-s> <Esc>:FixWhitespace<CR> :w<CR>
 " Comment line with Ctrl+/.For some reason _ represents /.
 filetype plugin on                      " Needed for nerdcommenter
 nmap <C-_> <Plug>NERDCommenterToggle
+
+" Alt+j/k or Alt+up/down to move a line up or down
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
+nnoremap <A-down> :m .+1<CR>==
+nnoremap <A-up> :m .-2<CR>==
+inoremap <A-down> <Esc>:m .-2<CR>==gi
+inoremap <A-up> <Esc>:m .+1<CR>==gi
+vnoremap <A-down> :m '>+1<CR>gv=gv
+vnoremap <A-up> :m '<-2<CR>gv=gv
+
+
