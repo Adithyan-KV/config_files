@@ -3,7 +3,6 @@ syntax on
 
 " Line numbering
 set number
-
 " Showing commands
 set showcmd
 
@@ -32,6 +31,7 @@ set clipboard+=unnamedplus
 let mapleader=" "
 set ttimeoutlen=500
 
+
 " Call all the plugins
 call plug#begin('~/.vim/plugged')
 
@@ -40,7 +40,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'itchyny/lightline.vim'                            " Status line plugin
     Plug 'ryanoasis/vim-devicons'                           " Icons for filetypes in NERDTree
     Plug 'preservim/nerdtree'                               " File browser bar
-    Plug 'yggdroot/indentline'                              " Show indentation levels
+    Plug 'yggdroot/indentline'                              " Show
     Plug 'raimondi/delimitmate'                             " Autoclose brackets,quotes etc.
     Plug 'bronson/vim-trailing-whitespace'                  " Highlight and delete trailing whitespace
     Plug 'preservim/nerdcommenter'                          " Adds better commenting
@@ -73,6 +73,9 @@ highlight Cursorline ctermbg=235 guibg=#262626
 
 " Enable mouse in all modes
 set mouse=a
+
+" Disable automatic commenting of the next line after a comment
+au FileType * set fo-=c fo-=r fo-=o
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Managing split windows
@@ -169,5 +172,3 @@ inoremap <A-down> <Esc>:m .-2<CR>==gi
 inoremap <A-up> <Esc>:m .+1<CR>==gi
 vnoremap <A-down> :m '>+1<CR>gv=gv
 vnoremap <A-up> :m '<-2<CR>gv=gv
-
-
