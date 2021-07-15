@@ -5,7 +5,7 @@
 (sleep 2; cbatticon)&
 
 # If external display is connected disable inbuilt display and use that
-~/Files/config_files/custom_scripts/second_monitor_only.sh&
+#~/Files/config_files/custom_scripts/second_monitor_only_alt.sh&
 
 # start battery notification daemon
 batsignal -b&

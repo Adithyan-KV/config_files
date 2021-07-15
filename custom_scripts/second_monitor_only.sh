@@ -15,12 +15,14 @@ echo $DISPLAY_COUNT' displays found'
 
 #If there is more than one display available turn off the laptop
 #inbuilt display and set another display as primary
+LAPTOP_DISPLAY=$(list_available_displays|awk 'FNR == 1 {print}')
 if [ $DISPLAY_COUNT -ge 2 ]
-then 
     SECOND_DISPLAY=$(list_available_displays|awk 'FNR == 2 {print}')
-    LAPTOP_DISPLAY=$(list_available_displays|awk 'FNR == 1 {print}')
+then
     echo 'Setting external display '$SECOND_DISPLAY' as primary...'
     xrandr --output $SECOND_DISPLAY --primary
     echo 'turning off laptop display '$LAPTOP_DISPLAY'...'
-    xrandr --output $LAPTOP_DISPLAY --off
+    xrandr --output $LAPTOP_DISPLAY --off --output $SECOND_DISPLAY --auto
+else
+    xrandr --output $LAPTOP_DISPLAY --auto
 fi
