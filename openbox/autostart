@@ -1,7 +1,6 @@
 # start system tray applets
-(sleep 5; nm-applet)&
 (sleep 2; pa-applet)&
-(sleep 2; mictray)&
+#(sleep 2; mictray)&
 (sleep 2; cbatticon)&
 
 # If external display is connected disable inbuilt display and use that
@@ -9,9 +8,6 @@
 
 # start battery notification daemon
 batsignal -b&
-
-# start clipboard manager
-#clipit&
 
 # Launch the panel and dock
 tint2&
