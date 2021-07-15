@@ -208,7 +208,7 @@
         <item label="Log out" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/gnome-logout.svg">
             <action name="Execute">
                 <command>
-                    logout
+                    openbox --exit
                 </command>
             </action>
         </item>
