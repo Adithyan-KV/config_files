@@ -46,7 +46,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'kyazdani42/nvim-web-devicons'                     " Icons for Filetree and stuff
     Plug 'kyazdani42/nvim-tree.lua'                         " File explorer tree
     Plug 'terrortylor/nvim-comment'                         " Commenting out lines
-    Plug 'hoob3rt/lualine.nvim'
+    Plug 'hoob3rt/lualine.nvim'                             " Statusline plugin
+    Plug 'akinsho/nvim-bufferline.lua'                      " Tabline plugin
 
 call plug#end()
 
@@ -126,11 +127,15 @@ lua require('lualine').setup{
             \options = {theme='gruvbox_material',
                         \section_separators = {'', ''},
                         \component_separators = {'', ''}},
+            \tabline={},
             \extensions={'nvim-tree','fugitive'},
             \}
 
 " Disabling the modename at the bottom as statusline extension already shows it
 set noshowmode
+
+" Adding a tabline
+lua require("bufferline").setup()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Navigating tabs
