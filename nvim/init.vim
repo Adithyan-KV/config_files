@@ -46,8 +46,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-fugitive'                               " Git integration
     Plug 'kyazdani42/nvim-web-devicons'                     " Icons for Filetree and stuff
     Plug 'kyazdani42/nvim-tree.lua'                         " File explorer tree
-    Plug 'b3nj5m1n/kommentary'                              " Plugin for commenting lines
-
+    Plug 'terrortylor/nvim-comment'                         " Commenting out lines
 call plug#end()
 
 " Setting color scheme
@@ -154,7 +153,9 @@ nmap <C-s> :FixWhitespace<CR> :w<CR>
 imap <C-s> <Esc>:FixWhitespace<CR> :w<CR>
 
 " Comment line with Ctrl+/.For some reason _ represents /.
-nmap <C-_> gcc
+lua require('nvim_comment').setup()
+nnoremap <C-_> :CommentToggle<CR>
+vnoremap <C-_> :CommentToggle<CR>
 
 " Alt+j/k or Alt+up/down to move a line up or down
 nnoremap <A-j> :m .+1<CR>==
