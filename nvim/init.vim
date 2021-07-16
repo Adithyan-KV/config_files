@@ -37,7 +37,6 @@ call plug#begin('~/.vim/plugged')
 
     Plug 'norcalli/nvim-colorizer.lua'                      " Show colors on color codes
     Plug 'mhinz/vim-startify'                               " Startup screen for vim
-    Plug 'itchyny/lightline.vim'                            " Status line plugin
     Plug 'yggdroot/indentline'                              " Show indentation levels with lines
     Plug 'raimondi/delimitmate'                             " Autoclose brackets,quotes etc.
     Plug 'bronson/vim-trailing-whitespace'                  " Highlight and delete trailing whitespace
@@ -47,6 +46,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'kyazdani42/nvim-web-devicons'                     " Icons for Filetree and stuff
     Plug 'kyazdani42/nvim-tree.lua'                         " File explorer tree
     Plug 'terrortylor/nvim-comment'                         " Commenting out lines
+    Plug 'hoob3rt/lualine.nvim'
+
 call plug#end()
 
 " Setting color scheme
@@ -121,20 +122,14 @@ let g:indentLine_color_gui='#262626'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Managing the statusline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-" setting colorscheme and adding git branch name
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ },
-      \ }
+lua require('lualine').setup{
+            \options = {theme='gruvbox_material',
+                        \section_separators = {'', ''},
+                        \component_separators = {'', ''}},
+            \extensions={'nvim-tree','fugitive'},
+            \}
 
-" Disabling the modename at the bottom as statusline extension already shows
-" it
+" Disabling the modename at the bottom as statusline extension already shows it
 set noshowmode
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -144,6 +139,15 @@ nnoremap <S-h> gT
 nnoremap <S-l> gt
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Comments plugin
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Comment line with Ctrl+/.For some reason _ represents /.
+lua require('nvim_comment').setup()
+nnoremap <C-_> :CommentToggle<CR>
+vnoremap <C-_> :CommentToggle<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  Setting other custom keybindings
 "  (Mostly to VSCode bindings)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -151,11 +155,6 @@ nnoremap <S-l> gt
 " Automatically deletes trailing whitespace while saving
 nmap <C-s> :FixWhitespace<CR> :w<CR>
 imap <C-s> <Esc>:FixWhitespace<CR> :w<CR>
-
-" Comment line with Ctrl+/.For some reason _ represents /.
-lua require('nvim_comment').setup()
-nnoremap <C-_> :CommentToggle<CR>
-vnoremap <C-_> :CommentToggle<CR>
 
 " Alt+j/k or Alt+up/down to move a line up or down
 nnoremap <A-j> :m .+1<CR>==
