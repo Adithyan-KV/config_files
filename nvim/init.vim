@@ -38,8 +38,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'norcalli/nvim-colorizer.lua'                      " Show colors on color codes
     Plug 'mhinz/vim-startify'                               " Startup screen for vim
     Plug 'itchyny/lightline.vim'                            " Status line plugin
-    Plug 'ryanoasis/vim-devicons'                           " Icons for filetypes in NERDTree
-    Plug 'preservim/nerdtree'                               " File browser bar
     Plug 'yggdroot/indentline'                              " Show
     Plug 'raimondi/delimitmate'                             " Autoclose brackets,quotes etc.
     Plug 'bronson/vim-trailing-whitespace'                  " Highlight and delete trailing whitespace
@@ -47,6 +45,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}         " Autocompletion for code
     Plug 'adithyan-kv/gruvbox-darkest'                      " Custom gruvbox colorscheme
     Plug 'tpope/vim-fugitive'                               " Git integration
+    Plug 'kyazdani42/nvim-web-devicons'                     " Icons for Filetree and stuff
+    Plug 'kyazdani42/nvim-tree.lua'                         " File explorer tree
 
 call plug#end()
 
@@ -100,8 +100,7 @@ tnoremap <S-t> <C-\><C-n>:q<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " File browser plugin
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>n :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
+nnoremap <leader>n :NvimTreeToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 " Managing indents
