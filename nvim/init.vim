@@ -38,15 +38,15 @@ call plug#begin('~/.vim/plugged')
     Plug 'norcalli/nvim-colorizer.lua'                      " Show colors on color codes
     Plug 'mhinz/vim-startify'                               " Startup screen for vim
     Plug 'itchyny/lightline.vim'                            " Status line plugin
-    Plug 'yggdroot/indentline'                              " Show
+    Plug 'yggdroot/indentline'                              " Show indentation levels with lines
     Plug 'raimondi/delimitmate'                             " Autoclose brackets,quotes etc.
     Plug 'bronson/vim-trailing-whitespace'                  " Highlight and delete trailing whitespace
-    Plug 'preservim/nerdcommenter'                          " Adds better commenting
     Plug 'neoclide/coc.nvim', {'branch': 'release'}         " Autocompletion for code
     Plug 'adithyan-kv/gruvbox-darkest'                      " Custom gruvbox colorscheme
     Plug 'tpope/vim-fugitive'                               " Git integration
     Plug 'kyazdani42/nvim-web-devicons'                     " Icons for Filetree and stuff
     Plug 'kyazdani42/nvim-tree.lua'                         " File explorer tree
+    Plug 'b3nj5m1n/kommentary'                              " Plugin for commenting lines
 
 call plug#end()
 
@@ -154,8 +154,7 @@ nmap <C-s> :FixWhitespace<CR> :w<CR>
 imap <C-s> <Esc>:FixWhitespace<CR> :w<CR>
 
 " Comment line with Ctrl+/.For some reason _ represents /.
-filetype plugin on                      " Needed for nerdcommenter
-nmap <C-_> <Plug>NERDCommenterToggle
+nmap <C-_> gcc
 
 " Alt+j/k or Alt+up/down to move a line up or down
 nnoremap <A-j> :m .+1<CR>==
