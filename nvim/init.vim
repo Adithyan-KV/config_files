@@ -35,19 +35,23 @@ set ttimeoutlen=500
 " Call all the plugins
 call plug#begin('~/.vim/plugged')
 
-    Plug 'norcalli/nvim-colorizer.lua'                      " Show colors on color codes
-    Plug 'mhinz/vim-startify'                               " Startup screen for vim
-    Plug 'yggdroot/indentline'                              " Show indentation levels with lines
-    Plug 'raimondi/delimitmate'                             " Autoclose brackets,quotes etc.
-    Plug 'bronson/vim-trailing-whitespace'                  " Highlight and delete trailing whitespace
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}         " Autocompletion for code
-    Plug 'adithyan-kv/gruvbox-darkest'                      " Custom gruvbox colorscheme
-    Plug 'tpope/vim-fugitive'                               " Git integration
-    Plug 'kyazdani42/nvim-web-devicons'                     " Icons for Filetree and stuff
-    Plug 'kyazdani42/nvim-tree.lua'                         " File explorer tree
-    Plug 'terrortylor/nvim-comment'                         " Commenting out lines
-    Plug 'hoob3rt/lualine.nvim'                             " Statusline plugin
-    Plug 'akinsho/nvim-bufferline.lua'                      " Tabline plugin
+    Plug 'norcalli/nvim-colorizer.lua'                              " Show colors on color codes
+    Plug 'mhinz/vim-startify'                                       " Startup screen for vim
+    Plug 'yggdroot/indentline'                                      " Show indentation levels with lines
+    Plug 'raimondi/delimitmate'                                     " Autoclose brackets,quotes etc.
+    Plug 'bronson/vim-trailing-whitespace'                          " Highlight and delete trailing whitespace
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}                 " Autocompletion for code
+    Plug 'adithyan-kv/gruvbox-darkest'                              " Custom gruvbox colorscheme
+    Plug 'tpope/vim-fugitive'                                       " Git integration
+    Plug 'kyazdani42/nvim-web-devicons'                             " Icons for Filetree and stuff
+    Plug 'kyazdani42/nvim-tree.lua'                                 " File explorer tree
+    Plug 'terrortylor/nvim-comment'                                 " Commenting out lines
+    Plug 'hoob3rt/lualine.nvim'                                     " Statusline plugin
+    Plug 'akinsho/nvim-bufferline.lua'                              " Tabline plugin
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}     " Better highlighting and stuff
+    Plug 'junegunn/fzf'                                             " Fuzzy finding file search
+    Plug 'junegunn/fzf.vim'                                         " Some wrapper functions for fzf
+    Plug 'airblade/vim-rooter'                                      " Change working directory to project directory
 
 call plug#end()
 
@@ -78,6 +82,20 @@ set mouse=a
 " Disable automatic commenting of the next line after a comment
 au FileType * set fo-=c fo-=r fo-=o
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fuzzy finding
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fuzzy find filename in cwd and down, respects gitignore
+" (Requires fzf installed in system)
+nnoremap <C-p> :GFiles<CR>
+" Fuzzy find text inside file in cwd and down
+" (Requires ripgrep installed in system)
+nnoremap <M-p> :Rg<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntax highlighting with treesitter
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua require('nvim-treesitter.configs').setup{highlight={enable=true}}
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Managing split windows
 """""""""""""""""""""""""""""""""""""""""""""""""""""
