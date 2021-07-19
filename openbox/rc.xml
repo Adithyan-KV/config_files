@@ -394,7 +394,7 @@
       <action name="MaximizeFull"/>
     </keybind>
     <!-- Close active window : Super+w -->
-    <keybind key="W-w">
+    <keybind key="W-q">
       <action name="Close"/>
     </keybind>
     <!-- Lock screen: Super+l -->
