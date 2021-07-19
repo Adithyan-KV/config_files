@@ -96,10 +96,11 @@ nnoremap <M-p> :Rg<CR>
 " Syntax highlighting with treesitter
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 lua require('nvim-treesitter.configs').setup{highlight={enable=true}}
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Managing split windows
 """""""""""""""""""""""""""""""""""""""""""""""""""""
-" Making new split windows open to thr right and down
+" Making new split windows open to the right and down
 set splitbelow splitright
 
 " Remapping split navigation to just Ctrl+hjkl
@@ -137,6 +138,10 @@ set expandtab
 " display indentation levels with lines plugin. Setting colors
 let g:indentLine_color_term=235
 let g:indentLine_color_gui='#262626'
+
+" Donot leave visual mode after indenting once
+vnoremap > >gv
+vnoremap < <gv
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Managing the statusline
