@@ -20,7 +20,8 @@ plank&
 nitrogen --restore&
 
 # Start the compositor
-picom --backend glx&
+# picom --backend glx&
+picom --experimental-backend&
 
 # Start notification daemon
 /usr/lib/xfce4/notifyd/xfce4-notifyd&
