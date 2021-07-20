@@ -77,10 +77,10 @@ set cursorline
 highlight Cursorline ctermbg=235 guibg=#262626
 
 " Giving vim the same transparency as terminal
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
+" highlight Normal ctermbg=none
+" highlight NonText ctermbg=none
 highlight Normal guibg=none
-highlight NonText guibg=none
+" highlight NonText guibg=none
 
 " Enable mouse in all modes
 set mouse=a
