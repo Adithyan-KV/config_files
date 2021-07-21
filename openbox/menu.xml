@@ -51,6 +51,13 @@
                 </command>
             </action>
         </item>
+        <item label="ST" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/terminal.svg">
+            <action name="Execute">
+                <command>
+                    st
+                </command>
+            </action>
+        </item>
         <item label="Xterm" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/xterm.svg">
             <action name="Execute">
                 <command>
@@ -137,6 +144,14 @@
             <action name="Execute">
                 <command>
                     firefox
+                </command>
+            </action>
+        </item>
+        <separator/>
+        <item label="Qutebrowser" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/qutebrowser.svg">
+            <action name="Execute">
+                <command>
+                    qutebrowser
                 </command>
             </action>
         </item>
