@@ -54,6 +54,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'airblade/vim-rooter'                                      " Change working directory to project directory
     Plug 'folke/zen-mode.nvim'                                      " Focus mode
     Plug 'folke/twilight.nvim'                                      " Highlight only the present paragraph/function in focus mode
+    Plug 'lervag/vimtex'                                            " LaTeX plugin. Autocompile on save and stuff
 
 call plug#end()
 
