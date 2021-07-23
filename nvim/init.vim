@@ -52,6 +52,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf'                                             " Fuzzy finding file search
     Plug 'junegunn/fzf.vim'                                         " Some wrapper functions for fzf
     Plug 'airblade/vim-rooter'                                      " Change working directory to project directory
+    Plug 'folke/zen-mode.nvim'                                      " Focus mode
+    Plug 'folke/twilight.nvim'                                      " Highlight only the present paragraph/function in focus mode
 
 call plug#end()
 
@@ -67,6 +69,10 @@ let g:vim_json_conceal=0
 " For color code highlighting plugin
 set termguicolors
 lua require'colorizer'.setup()
+
+" For focus mode plugin
+lua require('twilight').setup()
+lua require('zen-mode').setup()
 
 " Draw ruler
 set colorcolumn=80
