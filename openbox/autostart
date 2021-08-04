@@ -1,36 +1,37 @@
 # start system tray applets
-(sleep 2; pa-applet)&
+# (sleep 2; pa-applet)&
 #(sleep 2; mictray)&
-(sleep 2; cbatticon)&
+# (sleep 2; cbatticon)&
 
 # If external display is connected disable inbuilt display and use that
 #~/Files/config_files/custom_scripts/second_monitor_only_alt.sh&
 
 # start clipboard manager
-clipit&
+# clipit&
 
 # start battery notification daemon
-batsignal -b&
+# batsignal -b&
 
 # Launch the panel and dock
-tint2&
-plank&
+# tint2&
+# plank&
 
 # Restore the last wallpaper that was set
 nitrogen --restore&
 
 # Start the compositor
 # picom --backend glx&
-picom --experimental-backend&
+# picom --experimental-backend&
 
 # Start notification daemon
-/usr/lib/xfce4/notifyd/xfce4-notifyd&
+# /usr/lib/xfce4/notifyd/xfce4-notifyd&
 
 # Start authentication daemon. For GUI password confirmations etc.
-lxsession&
+# lxsession&
+lxpolkit&
 
 # Start program to automount usbs
-udiskie&
+# udiskie&
 
 # Remap the caps lock key to function as escape
 setxkbmap -option caps:escape
