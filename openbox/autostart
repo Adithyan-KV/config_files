@@ -27,8 +27,8 @@ picom --experimental-backend&
 /usr/lib/xfce4/notifyd/xfce4-notifyd&
 
 # Start authentication daemon. For GUI password confirmations etc.
-# lxsession&
-lxpolkit&
+lxsession&
+# lxpolkit&
 
 # Start program to automount usbs
 udiskie&
