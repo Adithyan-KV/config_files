@@ -249,9 +249,6 @@
       <action name="ToggleShowDesktop"/>
     </keybind>
     <!-- Keybindings for windows -->
-    <keybind key="A-F4">
-      <action name="Close"/>
-    </keybind>
     <keybind key="A-Escape">
       <action name="Lower"/>
       <action name="FocusToBottom"/>
@@ -407,6 +404,14 @@
     <!-- Close active window : Super+w -->
     <keybind key="W-q">
       <action name="Close"/>
+    </keybind>
+    <!-- ===================== -->
+    <!-- Power and lockscreen -->
+    <!-- ===================== -->
+    <keybind key="A-F4">
+      <action name="Execute">
+        <command>nwgbar</command>
+      </action>
     </keybind>
     <!-- Lock screen: Super+l -->
     <keybind key="W-l">
