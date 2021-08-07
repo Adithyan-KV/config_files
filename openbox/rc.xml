@@ -340,13 +340,13 @@
     <keybind key="W-b">
       <action name="Execute">
         <!-- Tried using an alias for the bash script but doesn't seem to work -->
-        <command>~/Files/config_files/custom_scripts/open_or_get_focus.sh brave</command>
+        <command>~/Files/config_files/custom_scripts/open_or_get_focus.sh firefox</command>
       </action>
     </keybind>
    <keybind key="A-b">
       <action name="Execute">
         <!-- Tried using an alias for the bash script but doesn't seem to work -->
-        <command>~/Files/config_files/custom_scripts/open_or_get_focus.sh qutebrowser</command>
+        <command>~/Files/config_files/custom_scripts/open_or_get_focus.sh brave</command>
       </action>
     </keybind>   <!-- Open file browser : Super+f -->
     <keybind key="W-f">
