@@ -330,6 +330,12 @@
         <command>alacritty</command>
       </action>
     </keybind>
+    <keybind key="A-t">
+      <action name="Execute">
+        <command>~/Files/config_files/custom_scripts/open_or_get_focus.sh alacritty</command>
+      </action>
+    </keybind>
+
     <!-- Open web browser : Super+b -->
     <keybind key="W-b">
       <action name="Execute">
