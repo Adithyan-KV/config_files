@@ -440,6 +440,23 @@
         <command>playerctl previous</command>
       </action>
     </keybind>
+    <!-- =================== -->
+    <!-- MONITOR CONTROLS -->
+    <!-- =================== -->
+    <!-- Turn on internal monitor -->
+    <keybind key="W-F1">
+      <action name="Execute">
+        <command>xrandr --output eDP-1 --auto</command>
+      </action>
+    </keybind>
+    <!-- Activate second monitor only-->
+    <keybind key="W-F2">
+      <action name="Execute">
+        <command>xrandr --output eDP-1 --off --output HDMI-1 --auto</command>
+      </action>
+    </keybind>
+
+
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
