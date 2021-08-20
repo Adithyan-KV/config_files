@@ -122,10 +122,10 @@
                 </command>
             </action>
         </item>
-        <item label="VS Code" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/code.svg">
+        <item label="VS Codium" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/vscodium.svg">
             <action name="Execute">
                 <command>
-                    code
+                    codium
                 </command>
             </action>
         </item>
@@ -133,6 +133,13 @@
             <action name="Execute">
                 <command>
                     alacritty -e nano
+                </command>
+            </action>
+        </item>
+        <item label="Neovim" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/nvim.svg">
+            <action name="Execute">
+                <command>
+                    alacritty -e nvim
                 </command>
             </action>
         </item>
@@ -144,6 +151,14 @@
             <action name="Execute">
                 <command>
                     firefox
+                </command>
+            </action>
+        </item>
+        <separator/>
+        <item label="Brave" icon="/home/adithyankv/.icons/Papirus-Dark/16x16/apps/brave.svg">
+            <action name="Execute">
+                <command>
+                    brave
                 </command>
             </action>
         </item>
