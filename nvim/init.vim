@@ -211,3 +211,13 @@ inoremap <A-down> <Esc>:m .+1<CR>==gi
 inoremap <A-up> <Esc>:m .-2<CR>==gi
 vnoremap <A-down> :m '>+1<CR>gv=gv
 vnoremap <A-up> :m '<-2<CR>gv=gv
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Format on save
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use astyle to format C code
+function FormatOnSaveC()
+     :silent !astyle -p %
+     :e
+endfunction
+autocmd BufWritePost *.h,*.c call FormatOnSaveC()
