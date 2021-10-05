@@ -52,9 +52,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf'                                             " Fuzzy finding file search
     Plug 'junegunn/fzf.vim'                                         " Some wrapper functions for fzf
     Plug 'airblade/vim-rooter'                                      " Change working directory to project directory
-    Plug 'folke/zen-mode.nvim'                                      " Focus mode
-    Plug 'folke/twilight.nvim'                                      " Highlight only the present paragraph/function in focus mode
     Plug 'lervag/vimtex'                                            " LaTeX plugin. Autocompile on save and stuff
+    Plug 'arrufat/vala.vim'                                         " Vala syntax highlighting
 
 call plug#end()
 
@@ -71,17 +70,13 @@ let g:vim_json_conceal=0
 set termguicolors
 lua require'colorizer'.setup()
 
-" For focus mode plugin
-lua require('twilight').setup()
-lua require('zen-mode').setup()
-
 " Draw ruler
 set colorcolumn=80
-highlight ColorColumn ctermbg=234 guibg=#1c1c1c
+highlight ColorColumn ctermbg=234 guibg=#3f3f3f
 
 " Highlighting the line on which the cursor is on
 set cursorline
-highlight Cursorline ctermbg=235 guibg=#262626
+highlight Cursorline ctermbg=235 guibg=#3b3b3b
 
 " Giving vim the same transparency as terminal
 " highlight Normal ctermbg=none
@@ -221,3 +216,17 @@ function FormatOnSaveC()
      :e
 endfunction
 autocmd BufWritePost *.h,*.c call FormatOnSaveC()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Intellisense
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
