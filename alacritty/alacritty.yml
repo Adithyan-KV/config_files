@@ -11,6 +11,7 @@ window:
     y: 5
   startup_mode: Windowed
   dynamic_title: true
+  opacity: 0.95
 
 
 scrolling:
@@ -29,7 +30,7 @@ font:
 
 colors:
   primary:
-    background: '#121212'
+    background: '#2e2e2e'
     foreground: '#b5b9c2'
 
   # Normal colors
@@ -412,7 +413,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.95
+# window.opacity: 0.95
 
 #selection:
   # This string contains all characters that are used as separators for
