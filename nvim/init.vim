@@ -35,14 +35,13 @@ set ttimeoutlen=500
 " Call all the plugins
 call plug#begin('~/.vim/plugged')
 
+    Plug 'neovim/nvim-lspconfig'                                    " Autocompletion using native lsp
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/nvim-cmp'
     Plug 'norcalli/nvim-colorizer.lua'                              " Show colors on color codes
-    Plug 'mhinz/vim-startify'                                       " Startup screen for vim
     Plug 'yggdroot/indentline'                                      " Show indentation levels with lines
     Plug 'raimondi/delimitmate'                                     " Autoclose brackets,quotes etc.
-    Plug 'bronson/vim-trailing-whitespace'                          " Highlight and delete trailing whitespace
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}                 " Autocompletion for code
-    Plug 'adithyan-kv/gruvbox-darkest'                              " Custom gruvbox colorscheme
-    Plug 'tpope/vim-fugitive'                                       " Git integration
     Plug 'kyazdani42/nvim-web-devicons'                             " Icons for Filetree and stuff
     Plug 'kyazdani42/nvim-tree.lua'                                 " File explorer tree
     Plug 'terrortylor/nvim-comment'                                 " Commenting out lines
@@ -89,6 +88,57 @@ set mouse=a
 
 " Disable automatic commenting of the next line after a comment
 au FileType * set fo-=c fo-=r fo-=o
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Autocompletion
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+set completeopt=menu,menuone,noselect
+
+lua <<EOF
+  -- Setup nvim-cmp.
+  local cmp = require'cmp'
+
+  cmp.setup({
+    snippet = {
+      expand = function(args)
+        -- For `vsnip` user.
+        vim.fn["vsnip#anonymous"](args.body)
+
+        -- For `luasnip` user.
+        -- require('luasnip').lsp_expand(args.body)
+
+        -- For `ultisnips` user.
+        -- vim.fn["UltiSnips#Anon"](args.body)
+      end,
+    },
+    mapping = {
+      ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+      ['<C-Space>'] = cmp.mapping.complete(),
+      ['<C-e>'] = cmp.mapping.close(),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    },
+    sources = {
+      { name = 'nvim_lsp' },
+
+      -- For vsnip user.
+      { name = 'vsnip' },
+
+      -- For luasnip user.
+      -- { name = 'luasnip' },
+
+      -- For ultisnips user.
+      -- { name = 'ultisnips' },
+
+      { name = 'buffer' },
+    }
+  })
+
+  -- Setup lspconfig.
+  require('lspconfig').clangd.setup {
+    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  }
+EOF
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fuzzy finding
@@ -189,8 +239,8 @@ vnoremap <C-_> :CommentToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " save with Ctrl+s
 " Automatically deletes trailing whitespace while saving
-nmap <C-s> :FixWhitespace<CR> :w<CR>
-imap <C-s> <Esc>:FixWhitespace<CR> :w<CR>
+nmap <C-s> :w<CR>
+imap <C-s> :w<CR>
 
 " Alt+j/k or Alt+up/down to move a line up or down
 nnoremap <A-j> :m .+1<CR>==
@@ -230,3 +280,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
