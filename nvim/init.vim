@@ -39,6 +39,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/nvim-cmp'
+    Plug 'shaunsingh/nord.nvim'                                     " Colorschemes
+    Plug 'rktjmp/lush.nvim'     "Required for gruvbox
+    Plug 'ellisonleao/gruvbox.nvim'
     Plug 'norcalli/nvim-colorizer.lua'                              " Show colors on color codes
     Plug 'yggdroot/indentline'                                      " Show indentation levels with lines
     Plug 'raimondi/delimitmate'                                     " Autoclose brackets,quotes etc.
@@ -57,8 +60,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 " Setting color scheme
-let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox-darkest
+colorscheme gruvbox
 set background=dark
 
 " Disable quote concealing in JSON files. To compensate for a setting that
