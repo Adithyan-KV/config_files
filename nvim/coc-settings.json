@@ -1,9 +1,0 @@
-{
-    "suggest.noselect":false,
-    "languageserver":{
-        "vala":{
-            "command":"vala-language-server",
-            "filetypes":["vala","genie"]
-        }
-    }
-}
