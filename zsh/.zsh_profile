@@ -1,0 +1,48 @@
+# Making completion case insensitive
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+
+## ----------------------------------------
+## Lines configured by zsh-newuser-install
+## ----------------------------------------
+
+# Settings for history of commands in the terminal
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+
+setopt nomatch
+
+# Set emacs like keybindings
+bindkey -e
+
+# Loading completion system
+autoload -Uz compinit
+compinit
+
+## auto-suggestions
+##-------------------------------------
+# Uses package from https://github.com/zsh-users/zsh-autosuggestions
+source ~/.config/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# fg can use values from 256 color palette or hex values
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=241"
+
+# ## syntax highlighting
+# ##--------------------------------------
+# # uses package from https://github.com/zsh-users/zsh-syntax-highlighting
+source ~/.config/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# # Setting colors 
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[unknown-token]="fg=255,bold"
+ZSH_HIGHLIGHT_STYLES[command]="fg=#e89d56,bold"
+ZSH_HIGHLIGHT_STYLES[builtin]="fg=#54bf8f,bold"
+ZSH_HIGHLIGHT_STYLES[alias]='fg=#74b8e8,bold'
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]="fg=#60818f,bold"
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=#60818f,bold'
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=#ff392e,bold'
+
+## Setting up ssh for github and stuff
+# eval `ssh-agent -s` >/dev/null
+# ssh-add $HOME/.ssh/id_gitlab 2>/dev/null
+# ssh-add $HOME/.ssh/id_rsa 2>/dev/null
