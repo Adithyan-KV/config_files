@@ -19,14 +19,14 @@ scrolling:
 
 font:
   normal:
-    family: Mononoki NF
+    family: JetBrainsMonoMedium NF
   bold:
-    family: Mononoki NF
+    family: JetBrainsMonoMedium NF
     style: Bold
   italic:
-    family: Mononoki NF
+    family: JetBrainsMonoMedium NF
     style: Italic
-  size: 11
+  size: 10
 
 colors:
   primary:

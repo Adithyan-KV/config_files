@@ -8,4 +8,7 @@ do
 done
 unset file
 
-# neofetch --colors 5 5 5 5 7 7 7 --ascii_colors 5 5
+# set PATH so it includes user's private ~/.local/bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
