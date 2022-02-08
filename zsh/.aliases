@@ -10,3 +10,6 @@ alias ls='exa --icons'
 # Using tokei to count lines of code. Makes more sense to have the most
 ## common language come up first so adding the lines argument
 alias tokei='tokei --sort lines'
+
+# using bat instead of cat. Bat has default command batcat on debian systems
+alias cat='batcat --theme OneHalfDark'
