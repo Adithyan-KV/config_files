@@ -1,0 +1,46 @@
+# Add an empty line between prompts
+add_newline = false
+
+format = """
+$directory\
+$character
+"""
+
+# show everything other than the current folder in the right prompt
+right_format = """$all"""
+
+# Use a one line prompt instead of the default two line
+[line_break]
+disabled = true
+
+# Shows failure character if last command failed. Success otherwise
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red) "
+
+[directory]
+read_only = " "
+
+[git_branch]
+symbol = " "
+
+# show number of changed files and such stuff
+[git_status]
+untracked = " $count "
+modified = " $count "
+stashed = " $count "
+staged = " $count "
+renamed = "凜$count "
+deleted = "﫧$count "
+
+[lua]
+symbol = " "
+
+[nodejs]
+format = "via [ $version](bold green) "
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
