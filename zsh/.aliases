@@ -4,12 +4,16 @@
 alias ..='cd ..'
 alias ...='cd ../..'
 
-# Using exa program instead of ls
-alias ls='exa --icons'
-
 # Using tokei to count lines of code. Makes more sense to have the most
 ## common language come up first so adding the lines argument
 alias tokei='tokei --sort lines'
 
-# using bat instead of cat. Bat has default command batcat on debian systems
+
+alias vala-lint='io.elementary.vala-lint'
+
+# Alias some of the default programs to better alternatives
 alias cat='batcat --theme OneHalfDark'
+alias ls='exa --icons'
+alias tree='exa --tree'
+alias fd='fd-find'
+
