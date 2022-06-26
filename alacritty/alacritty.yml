@@ -7,8 +7,8 @@ window:
     x: 300
     y: 100
   padding:
-    x: 2
-    y: 5
+    x: 0
+    y: 2
   startup_mode: Windowed
   dynamic_title: true
   opacity: 0.95
