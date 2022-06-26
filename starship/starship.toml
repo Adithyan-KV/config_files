@@ -11,13 +11,11 @@ $directory\
 
 # The right prompt
 right_format = """
-[](fg:#e76062)
-$git_branch\
-[](fg:#A24850 bg:#e76062)
-$git_status
-$python
-$lua
-$nodejs
+([](fg:#e76062)$git_branch)\
+([](fg:#A24850 bg:#e76062)$git_status)\
+$python\
+$lua\
+$nodejs\
 """
 
 # Use a one line prompt instead of the default two line
