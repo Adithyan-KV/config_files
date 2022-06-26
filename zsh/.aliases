@@ -15,5 +15,5 @@ alias vala-lint='io.elementary.vala-lint'
 alias cat='batcat --theme OneHalfDark'
 alias ls='exa --icons'
 alias tree='exa --tree'
-alias fd='fd-find'
+alias fd='fdfind'
 

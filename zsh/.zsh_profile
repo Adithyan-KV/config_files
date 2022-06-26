@@ -32,7 +32,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=241"
 # # uses package from https://github.com/zsh-users/zsh-syntax-highlighting
 source ~/.config/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# # Setting colors 
+# Setting colors
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[unknown-token]="fg=255,bold"
 ZSH_HIGHLIGHT_STYLES[command]="fg=#e89d56,bold"
