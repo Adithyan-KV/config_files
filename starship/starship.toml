@@ -1,13 +1,21 @@
 # Add an empty line between prompts
 add_newline = false
 
+# The left prompt
 format = """
 $directory\
-$character
+[](fg:#1C658C bg:#06969A)\
+[ ♥ ](bg:#06969A fg:#D8DDE3)\
+[ ](fg:#06969A)
 """
 
-# show everything other than the current folder in the right prompt
-right_format = """$all"""
+# The right prompt
+right_format = """
+[](fg:#e76062)
+$git_branch\
+[](fg:#A24850 bg:#e76062)
+$git_status
+"""
 
 # Use a one line prompt instead of the default two line
 [line_break]
@@ -20,27 +28,24 @@ error_symbol = "[➜](bold red) "
 
 [directory]
 read_only = " "
+format = "[$read_only $path ]($style)"
+style = "bg:#1C658C fg:#D8DDE3"
 
 [git_branch]
-symbol = " "
+symbol = ""
+format = "[ $symbol $branch ]($style)"
+style = "bg:#e76062 fg:#D8DDE3"
 
 # show number of changed files and such stuff
 [git_status]
 untracked = " $count "
 modified = " $count "
 stashed = " $count "
-staged = " $count "
+staged = " $count "
 renamed = "凜$count "
 deleted = "﫧$count "
-
-[lua]
-symbol = " "
-
-[nodejs]
-format = "via [ $version](bold green) "
-
-[package]
-symbol = " "
-
-[python]
-symbol = " "
+up_to_date = ""
+ahead = "祝$count"
+behind = " $count"
+format = "[ $all_status$ahead_behind ]($style)"
+style = "fg:#D8DDE3 bg:#A24850"
