@@ -15,6 +15,9 @@ right_format = """
 $git_branch\
 [](fg:#A24850 bg:#e76062)
 $git_status
+$python
+$lua
+$nodejs
 """
 
 # Use a one line prompt instead of the default two line
@@ -49,3 +52,16 @@ ahead = "祝$count"
 behind = " $count"
 format = "[ $all_status$ahead_behind ]($style)"
 style = "fg:#D8DDE3 bg:#A24850"
+
+[python]
+symbol = ""
+format = "[](bg:#A24850 fg:#FFB449)[$symbol $version (\\($virtualenv\\))](bg:#FFB449 fg:#FFFFFF)"
+
+[lua]
+symbol = ""
+format = "[](bg:#A24850 fg:#1B658C)[$symbol $version](bg:#1B658C fg:#FFFFFF)"
+lua_binary = "luajit"
+
+[nodejs]
+symbol = ""
+format = "[](bg:#A24850 fg:#16C79A)[$symbol $version](bg:#16C79A fg:#FFFFFF)"
