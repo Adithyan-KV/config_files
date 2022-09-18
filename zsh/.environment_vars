@@ -1,0 +1,5 @@
+# setting some environment variables.
+
+# configuring some directories based on XDG base directory spec.
+# usually defaults to the same directory, just explicitly setting it to be safe.
+XDG_CONFIG_HOME=$HOME/.config

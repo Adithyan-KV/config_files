@@ -1,5 +1,5 @@
 # import relevant configurations from relevant files if they exist
-for file in $ZDOTDIR/.{zsh_prompt,zsh_profile,aliases}
+for file in $ZDOTDIR/.{zsh_prompt,zsh_profile,aliases,environment_vars}
 do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
 done
