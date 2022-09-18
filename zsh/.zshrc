@@ -10,4 +10,7 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# add cargo and other rust tools to path
+PATH="$XDG_DATA_HOME/cargo/bin:$PATH"
+
 pokemon-colorscripts -r
