@@ -1,0 +1,7 @@
+[user]
+	email = 29067795+adithyankv@users.noreply.github.com
+	name = Adithyan K V
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim
