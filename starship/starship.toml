@@ -3,19 +3,16 @@ add_newline = false
 
 # The left prompt
 format = """
-$directory\
-[](fg:#1C658C bg:#06969A)\
-[ ♥ ](bg:#06969A fg:#D8DDE3)\
-[ ](fg:#06969A)
+$directory \
 """
 
 # The right prompt
-right_format = """
-([](fg:#e76062)$git_branch)\
-([](fg:#A24850 bg:#e76062)$git_status)\
+right_format="""
+$git_branch\
+$git_status\
 $python\
 $lua\
-$nodejs\
+$nodejs
 """
 
 # Use a one line prompt instead of the default two line
@@ -24,17 +21,17 @@ disabled = true
 
 # Shows failure character if last command failed. Success otherwise
 [character]
-success_symbol = "[➜](bold green)"
-error_symbol = "[➜](bold red) "
+success_symbol = "[♥](fg:#06969A bg:#1C658C)"
+error_symbol = "[♥](green bg:#1C658C) "
 
 [directory]
 read_only = " "
-format = "[$read_only $path ]($style)"
+format = "[](fg:#1C658C)[$read_only $path ]($style)[](fg:#1C658C)"
 style = "bg:#1C658C fg:#D8DDE3"
 
 [git_branch]
 symbol = ""
-format = "[ $symbol $branch ]($style)"
+format = "[](fg:#E76062)[ $symbol $branch ]($style)[](fg:#E76062)"
 style = "bg:#e76062 fg:#D8DDE3"
 
 # show number of changed files and such stuff
@@ -48,18 +45,24 @@ deleted = "﫧$count "
 up_to_date = ""
 ahead = "祝$count"
 behind = " $count"
-format = "[ $all_status$ahead_behind ]($style)"
+format = "[](fg:#A24850)[ $all_status$ahead_behind ]($style)[](fg:#A24850)"
 style = "fg:#D8DDE3 bg:#A24850"
 
 [python]
 symbol = ""
-format = "[](bg:#A24850 fg:#FFB449)[$symbol $version (\\($virtualenv\\))](bg:#FFB449 fg:#FFFFFF)"
+# using python brand colors
+format = "[](fg:#306998)[$symbol $version (\\($virtualenv\\))]($style)[](fg:#306998)"
+style = "fg:#FFD43B bg:#306998"
 
 [lua]
 symbol = ""
-format = "[](bg:#A24850 fg:#1B658C)[$symbol $version](bg:#1B658C fg:#FFFFFF)"
+format = "[](fg:#00007C)[$symbol $version]($style)[](fg:#00007C)"
+# using lua brand colors
+style = "fg:#D8DDE3 bg:#00007C"
 lua_binary = "luajit"
 
 [nodejs]
 symbol = ""
-format = "[](bg:#A24850 fg:#16C79A)[$symbol $version](bg:#16C79A fg:#FFFFFF)"
+# using nodejs brand colors
+format = "[](fg:#68A063)[$symbol $version]($style)[](fg:#68A063)"
+style = "fg:#303030 bg:#68A063"
