@@ -21,11 +21,6 @@ $cmd_duration
 [line_break]
 disabled = true
 
-# Shows failure character if last command failed. Success otherwise
-[character]
-success_symbol = "[♥](fg:#06969A bg:#1C658C)"
-error_symbol = "[♥](green bg:#1C658C) "
-
 [directory]
 read_only = " "
 format = "[](fg:#1C658C)[$read_only $path ]($style)[](fg:#1C658C)"
