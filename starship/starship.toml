@@ -12,7 +12,8 @@ $git_branch\
 $git_status\
 $python\
 $lua\
-$nodejs
+$nodejs\
+$cmd_duration
 """
 
 # Use a one line prompt instead of the default two line
@@ -66,3 +67,7 @@ symbol = ""
 # using nodejs brand colors
 format = "[](fg:#68A063)[$symbol $version]($style)[](fg:#68A063)"
 style = "fg:#303030 bg:#68A063"
+
+[cmd_duration]
+format = "[](fg:#74698C)[ $duration]($style)[](fg:#74698C)"
+style = "fg:#D8DDE3 bg:#74698C"
