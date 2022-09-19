@@ -13,6 +13,7 @@ $git_status\
 $python\
 $lua\
 $nodejs\
+$package\
 $cmd_duration
 """
 
@@ -71,3 +72,8 @@ style = "fg:#303030 bg:#68A063"
 [cmd_duration]
 format = "[](fg:#74698C)[ $duration]($style)[](fg:#74698C)"
 style = "fg:#D8DDE3 bg:#74698C"
+
+[package]
+symbol=""
+format = "[](fg:#F79563)[$symbol $version]($style)[](fg:#F79563)"
+style = "fg:#D8DDE3 bg:#F79563"
