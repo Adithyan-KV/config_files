@@ -10,3 +10,9 @@ export XDG_CACHE_HOME="$HOME"/.cache
 # for making rust and tooling use .config directory
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
+
+# for python install
+# only allow pip to install stuff if in a virtual env to avoid corrupting system python
+export PIP_REQUIRE_VIRTUALENV=true
+# required for pyenv. set as same location to where pyenv repo is cloned
+export PYENV_ROOT="$HOME/.local/bin/pyenv"

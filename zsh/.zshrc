@@ -13,4 +13,9 @@ fi
 # add cargo and other rust tools to path
 PATH="$XDG_DATA_HOME/cargo/bin:$PATH"
 
+# add pyenv to path
+PATH="$PYENV_ROOT/bin:$PATH"
+
 pokemon-colorscripts -r
+
+eval "$(pyenv init -)"

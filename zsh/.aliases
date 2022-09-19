@@ -12,7 +12,7 @@ alias tokei='tokei --sort lines'
 alias vala-lint='io.elementary.vala-lint'
 
 # Alias some of the default programs to better alternatives
-alias cat='batcat --theme OneHalfDark'
+alias cat='bat --theme OneHalfDark'
 alias ls='exa --icons'
 alias tree='exa --tree'
 alias fd='fdfind'
