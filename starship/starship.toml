@@ -13,6 +13,7 @@ $git_status\
 $python\
 $lua\
 $nodejs\
+$rust\
 $package\
 $cmd_duration
 """
@@ -50,6 +51,11 @@ symbol = ""
 # using python brand colors
 format = "[](fg:#306998)[$symbol $version (\\($virtualenv\\))]($style)[](fg:#306998)"
 style = "fg:#FFD43B bg:#306998"
+
+[rust]
+symbol = ""
+format = "[](fg:#F46C31)[$symbol $version]($style)[](fg:#F46C31)"
+style = "fg:#D8DDE3 bg:#F46C31"
 
 [lua]
 symbol = ""
