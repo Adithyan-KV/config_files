@@ -5,3 +5,4 @@
 	defaultBranch = main
 [core]
 	editor = nvim
+    pager = delta --side-by-side
