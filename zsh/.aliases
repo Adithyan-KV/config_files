@@ -17,3 +17,4 @@ alias ls='exa --icons'
 alias tree='exa --tree'
 alias fd='fdfind'
 
+alias vim='nvim'

@@ -19,3 +19,5 @@ PATH="$PYENV_ROOT/bin:$PATH"
 pokemon-colorscripts -r
 
 eval "$(pyenv init -)"
+
+PATH=$PATH:"$(go env GOPATH)/bin"

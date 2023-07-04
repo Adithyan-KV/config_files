@@ -16,3 +16,9 @@ export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export PIP_REQUIRE_VIRTUALENV=true
 # required for pyenv. set as same location to where pyenv repo is cloned
 export PYENV_ROOT="$HOME/.local/bin/pyenv"
+
+# Make starship follow XDG config specifications
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+
+# Required to store go modules in non-default directory
+export GOPATH="$HOME/.go"
